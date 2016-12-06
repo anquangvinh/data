@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="mapGoogle" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>My AngularJS App</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="app.css">
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2EqJFWkY5UUBU0y0kiD9K-lx2gaavQEg&libraries=places"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js"></script>
+  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+
+<body ng-controller="mapGoogleCtrl">
+  <div id="wrapper">
+    <div ng-view></div>
+  </div>
+  <script src="app.js"></script>
+  <script src="location/map.js"></script>
+  <script src="detail/detail.js"></script>
+  <script src="location/list/list.js"></script>
+  <script src="location/favourite/favourite.js"></script>
+
+</body>
+</html>

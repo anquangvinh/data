@@ -1,0 +1,85 @@
+<div id="detail-map-area">
+  <a href="#/location/list">
+    <div id="detail-back">
+      <img src="../../assets/imgs/back-icon.png" alt="back-icon.png"> Back to Home
+    </div>
+  </a>
+
+  <div id="detail-map">
+
+  </div>
+</div>
+
+  <div id="detail-title">
+    <div>
+      <h3>{{ detailArr[0].name }}</h3>
+    </div>
+    <img src="../../assets/imgs/location-icon.png" alt="location-icon.png">
+  </div>
+
+  <div id="detail-manipulate">
+    <div>
+      <div class="detail-manipulate-img">
+        <img src="../../assets/imgs/phone.png" alt="phone.png">
+      </div>
+      <p>Telephone</p>
+    </div>
+    <div >
+      <div class="detail-manipulate-img">
+        <img src="../../assets/imgs/email.png" alt="email.png">
+      </div>
+      <p>Email</p>
+    </div>
+    <div>
+      <div class="detail-manipulate-img" ng-click="chooseFavour()">
+        <img src="../../assets/imgs/{{ favourImg }}" alt="{{ favourImg }}">
+      </div>
+      <p>Favourite</p>
+    </div>
+  </div>
+
+  <div class="clearfix"></div>
+
+  <div class="detail-contact">
+    <div class="detail-icon">
+      <img src="../../assets/imgs/location-detail.png" alt="location-detail.png">
+    </div>
+    <div class="detail-address-info">
+      <p>{{ detailArr[0].address }}</p>
+      <strong>{{ detailArr[0].distance }} from current position.</strong>
+    </div>
+  </div>
+
+  <div class="detail-contact">
+    <div class="detail-icon">
+      <img src="../../assets/imgs/phone.png" alt="phone.png">
+    </div>
+    <div class="detail-format">
+      <div class="detail-info">
+        <p>{{ detailArr[0].phone }}</p>
+      </div>
+      <div class="detail-edit">
+        <img src="../../assets/imgs/edit-detail-icon.png" alt="edit-detail-icon.png">
+      </div>
+    </div>
+  </div>
+
+  <div class="detail-contact">
+    <div class="detail-icon">
+      <img src="../../assets/imgs/email.png" alt="email.png">
+    </div>
+    <div class="detail-format">
+      <div class="detail-info">
+        <p>
+          {{ detailArr[0].website }}
+        </p>
+      </div>
+      <div class="detail-edit">
+        <img  src="../../assets/imgs/edit-detail-icon.png" alt="edit-detail-icon.png">
+      </div>
+    </div>
+  </div>
+
+<div class="detail-button-area">
+  <button id="btnUpdate">UPDATE & BACK</button>
+</div>

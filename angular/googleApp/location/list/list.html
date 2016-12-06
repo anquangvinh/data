@@ -1,0 +1,19 @@
+<page-header></page-header>
+<div id="list-body">
+  <div ng-repeat="item in locations | orderBy : 'distance'" class="location-item">
+    <a href="#/detail/{{ item.id }}/distance/{{ item.distance }}">
+      <div class="location-item-info">
+        <h3>{{ item.name | uppercase}}</h3>
+        <p>{{ item.address }}</p>
+        <strong>{{ item.distance }} from current position.</strong>
+      </div>
+      <div class="location-item-favor">
+        <img ng-show="{{ item.isFavourite }}" src="assets/imgs/redStar.png" alt="star.png">
+      </div>
+      <div class="clearfix"></div>
+    </a>
+  </div>
+<!--   <div class="input-area">
+    <input id="search-input" type="text" placeholder="Search Box"/>
+  </div> -->
+</div>

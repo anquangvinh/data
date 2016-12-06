@@ -1,0 +1,16 @@
+<page-header></page-header>
+<div id="favourite-body">
+	<div ng-repeat="item in favouriteStored | orderBy : 'distance'" class="location-item">
+    <a href="#/detail/{{ item.id }}/distance/{{ item.distance }}">
+      <div class="location-item-info">
+        <h3>{{ item.name | uppercase}}</h3>
+        <p>{{ item.address }}</p>
+        <strong>{{ item.distance }} from current position.</strong>
+      </div>
+      <div class="location-item-favor">
+        <img src="assets/imgs/redStar.png" alt="redStar.png">
+      </div>
+      <div class="clearfix"></div>
+    </a>
+  </div>
+</div>
