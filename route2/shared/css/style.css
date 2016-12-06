@@ -1,0 +1,37 @@
+h1 {
+  color: orange;
+}
+ul {
+  list-style: none;
+}
+
+ul li {
+  float: left;
+}
+
+ul li a {
+  text-decoration: none;
+  padding: 10px;
+  border-right: 1px solid white;
+  display: inline-block;
+  background: orange;
+  color: white;
+}
+
+.clearfix {
+  clear: both;
+}
+.htmlTem {
+  color: blue;
+  font-size: 18px;
+}
+
+.cssTem {
+  color: green;
+  font-size: 18px;
+}
+
+.phpTem {
+  color: #f1f1f1;
+  font-size: 18px;
+}
