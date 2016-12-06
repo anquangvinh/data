@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Create Directive</title>
+  <link rel="stylesheet" href="">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body ng-app="directiveApp" >
+
+  <div ng-controller="directiveAppCtrl">
+    <customer-infor customer-name="customer1st"></customer-infor>
+
+    <hr>
+
+    <customer-infor customer-name="customer2nd"></customer-infor>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>

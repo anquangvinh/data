@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+  <div ng-controller="firstCtrlObj">
+    <h3>First Controller</h3>
+    First Name: {{ firstModelObj.firstName }}
+    <br>
+    Set First Name: <input type="text" ng-model="firstModelObj.firstName">
+    <hr>
+
+    <!-- Second Ctrl -->
+    <div ng-controller="secondCtrlObj">
+      <h3>Second Controller</h3>
+      First Name(from First): {{ firstModelObj.firstName }} <br>
+      Last Name(from Second): {{ secondModelObj.lastName }} <br>
+      Full Name: {{ getFullName() }} <br>
+      Set First Name <input type="text" ng-model="firstModelObj.firstName"> <br>
+      Set Second Name <input type="text" ng-model="secondModelObj.lastName"> <br>
+      <hr>
+
+      <div ng-controller="thirdCtrlObj">
+        <h3>Third Controller</h3>
+        First Name (from First): {{ firstModelObj.firstName }} <br>
+        Middle Name (from Third): {{ thirdModelObj.middleName }} <br>
+        LastName (from Second): {{ secondModelObj.lastName }} <br>
+        Lastname (from Third): {{
+        thirdModelObj.lastName }} <br>
+        Full Name (redefine in Third): {{getFullName()}} <br>
+
+        Set first name: <input type="text" ng-model="firstModelObj.firstName"/><br />
+        Set middle name: <input type="text" ng-model="thirdModelObj.middleName"/><br />
+        <label>Set the last name: <input type="text" ng-model="thirdModelObj.lastName"/>
+      </div>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>

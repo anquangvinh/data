@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+  <style>
+    body {
+      width: 500px;
+    }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body ng-app="eventApp" ng-controller="eventAppCtrl">
+  <!-- Mouse Event -->
+    <!-- ng-click -->
+    <input type="text" ng-model="eventClickInput">
+    <button ng-click="getInputValue(eventClickInput, 1)">One Click</button>
+    {{ valueOfFirstInput }}
+
+    <br><br>
+    <!-- ng-dblclick -->
+    <input type="text" ng-model="eventDblClickInput">
+    <button ng-dblClick="getInputValue(eventDblClickInput, 2)">Double Click</button>
+    {{ valueOfSecondInput }}
+
+    <!-- ng-mouseenter ; ng-mouseout -->
+    <h1 style="color: {{ color }}"
+      ng-mouseenter="changeColor('enter')"
+      ng-mouseout="changeColor('out')">
+      Enter mouse here to change color
+    </h1>
+
+    <hr>
+
+    <!-- ng-copy -->
+    <div>
+      <h3>Copy the paragraph: <strong>{{ copyTimes }}</strong> times.</h3>
+      <p ng-copy="countCopyTimes()">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.
+      </p>
+    </div>
+
+    <!-- ng-paste -->
+    <h3>Paste to text-area</h3>
+    <p style="color: right: ;">{{ notice }}</p>
+    <textarea ng-paste="noticePaste()" cols="60" rows="5"></textarea>
+
+    <script src="index.js"></script>
+</body>
+</html>

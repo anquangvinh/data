@@ -1,0 +1,35 @@
+<form name="userEdit" class="form-horizontal" novalidate>
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">User Name</label>
+    <div class="col-sm-10">
+      <input name="txtUserName" ng-model="user.name" type="text" class="form-control" placeholder="User Name" required>
+        <div ng-show="userEdit.$submitted || userEdit.txtUserName.$touched || userEdit.txtUserName.$dirty && userEdit.txtUserName.$invalid ">
+          <span class="err" ng-show="userEdit.txtUserName.$error.required">
+          User name is required!
+          </span>
+        </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label">Email</label>
+    <div class="col-sm-10">
+      <input ng-model="user.email" name="txtEmail" type="email" class="form-control" placeholder="Email" required>
+      <div ng-show="userEdit.$submitted || userEdit.txtEmail.$touched || userEdit.txtEmail.$dirty && userEdit.txtEmail.$invalid ">
+      <span class="err" ng-show=" userEdit.txtEmail.$error.required">
+      Email is required!
+      </span>
+      <span class="err" ng-show="userEdit.txtEmail.$error.email">
+      Email is invalid!
+      </span>
+    </div>
+    </div>
+
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" ng-click="save()" class="btn btn-success">Save</button>
+      <a href="#/userlist"><button type="button" class="btn btn-info">Back</button></a>
+    </div>
+  </div>
+</form>

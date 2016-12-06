@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+  {{ 255 | hexnum }}
+
+  <script>
+    var app = angular.module("myApp", []);
+
+    app.service("hexafy", function(){
+      this.parseHex = function(x){
+        return x.toString(16);
+      }
+    });
+
+    app.filter("hexnum", ["hexafy", function(hexafy){
+      return function(x){
+        return hexafy.parseHex(x);
+      };
+    }]);
+  </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<h1>List of Users</h1>
+<div class="form-group">
+  <label>Search</label>
+  <input ng-model="txtSearch" type="text" class="form-control" placeholder="Search">
+</div>
+<table class="table table-hover">
+  <tr>
+    <th>User Name</th>
+    <th>Email</th>
+    <th>Edit</th>
+    <th>Delete</th>
+    <th><a href="#/useradd"><button class="btn btn-warning">Add</button></a></th>
+  </tr>
+  <tr ng-repeat="user in users | filter : txtSearch">
+    <td>{{ user.name }}</td>
+    <td>{{ user.email }}</td>
+    <td><a href="#/useredit/edit/{{$index}}"><button class="btn btn-success">Edit</button></a></td>
+    <td><button class="btn btn-danger" ng-click="deleteUser($index)">Delete</button></td>
+    <td></td>
+  </tr>
+</table>

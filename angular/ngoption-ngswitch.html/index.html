@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body ng-app="selectSwitchApp" ng-controller="appCtrl">
+  <select name="sltPerson" ng-model="sltPerson" ng-options="x.name for x in person">
+    <option value=""> Choose a Person </option>
+  </select>
+
+  <div ng-switch="sltPerson.name">
+    <div ng-switch-when="First">
+      First was chosen!.
+    </div>
+    <div ng-switch-when="Second">
+      Second was chosen!.
+    </div>
+    <div ng-switch-when="Third">
+      Third was chosen!.
+    </div>
+    <div ng-switch-default>
+      Nothing!
+    </div>
+  </div>
+
+  <!-- <select name="sltMultiPerson" ng-model="sltMultiPerson" ng-options="person for person in person2" multiple>
+  </select>
+  {{ sltMultiPerson }} -->
+  <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <style>
+  .err {
+    color: red;
+  }
+  </style>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+</head>
+<body ng-app="manageUserApp" ng-controller="manageUserCtrl">
+  <h1>INDEX</h1>
+  <hr>
+  <div ng-view></div>
+
+  <script src="app.js"></script>
+  <script src="userlist/userlist.js"></script>
+  <script src="useredit/useredit.js"></script>
+  <script src="useradd/useradd.js"></script>
+</body>
+</html>

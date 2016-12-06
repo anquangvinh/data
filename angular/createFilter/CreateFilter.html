@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+  {{ 25 | ordinal }}
+  {{ 'test' | ordinal }}
+  {{ 1 | ordinal }}
+
+  <script>
+    var app = angular.module("myApp", []);
+    app.filter("ordinal", function(){
+      return function(number){
+        if(isNaN(number) || number < 1){
+          return number;
+        }else {
+          var lastDigit = number % 10;
+
+          if(lastDigit === 1){
+            return number + 'st';
+          } else if(lastDigit === 2){
+            return number + 'nd';
+          }else if(lastDigit === 3){
+            return number + 'rd';
+          }else if(lastDigit > 3){
+            return number + 'th';
+          }
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>

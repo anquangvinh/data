@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+  <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+      width: 400px;
+      padding: 5px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f1f1f1;
+    }
+
+    tr td:last-child {
+      text-align: center;
+      color: red;
+    }
+
+    #add-part {
+      margin-top: 20px;
+      width: 400px;
+    }
+
+    #add-part p {
+      color: red;
+    }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+  <table>
+    <tr>
+      <th>Product Name</th>
+      <th>Price</th>
+      <th ng-click="addProduct()">Add</th>
+    </tr>
+
+    <tr ng-repeat="x in products">
+      <td> {{ x.name }} </td>
+      <td> {{ x.price | currency : $ : 0 }}</td>
+      <td ng-click="deleteFunc($index)"> Del</td>
+    </tr>
+  </table>
+
+  <div id="add-part" ng-show="addpart">
+    <hr>
+    <p>{{ err }}</p>
+    <div>ProductName: </div>
+    <input type="text" name="txtName" ng-model="txtName">
+    <div>Price</div>
+    <input type="text" name="txtPrice" ng-model="txtPrice">
+    <button name="btnAdd" ng-click="addFunc()">Add</button>
+  </div>
+
+  <script src="angularApp01.js"></script>
+</body>
+</html>

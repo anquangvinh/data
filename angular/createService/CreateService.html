@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+  {{ hex }}
+  <script>
+    var app = angular.module("myApp", []);
+
+    app.service("hexafy", function(){
+      this.parseHex = function(x){
+        return x.toString(16);
+      }
+    });
+
+    app.controller("myCtrl", function($scope, hexafy){
+      $scope.hex = hexafy.parseHex(255);
+    });
+  </script>
+
+</body>
+</html>

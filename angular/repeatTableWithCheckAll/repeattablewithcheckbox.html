@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+      width: 400px;
+      padding: 10px;
+    }
+
+    tr td:first-child {
+      text-align: center;
+    }
+  </style>
+</head>
+<body ng-app="myApp" ng-controller="repeaterCtrl">
+
+  <table>
+    <tr>
+      <th>
+        <input type="checkbox" ng-model="allCheck" ng-change="CheckAllFunc(allCheck)">
+      </th>
+      <th>Name</th>
+      <th>Age</th>
+    </tr>
+    <tr ng-repeat="x in user">
+      <td>
+        <input type="checkbox" ng-model="x.isSelect">
+      </td>
+      <td>{{ x.name }}</td>
+      <td>{{ x.age }}</td>
+    </tr>
+  </table>
+
+  <script src="repeatTable.js"></script>
+</body>
+</html>

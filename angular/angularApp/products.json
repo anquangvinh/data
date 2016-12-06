@@ -1,0 +1,7 @@
+{
+  "products" : [
+    {"name" : "Watch", "price" : "1000"},
+    {"name" : "Computer", "price" : "1300"},
+    {"name" : "Shoe", "price" : "2400"}
+  ]
+}

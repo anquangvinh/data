@@ -1,0 +1,85 @@
+<div id="detail-map-wrapper">
+  <div id="detail-map-area">
+    <a href="#" ng-click="goBack()">
+      <div id="detail-back">
+        <img src="../../assets/imgs/back-icon.png" alt="back-icon.png"> Back to Home
+      </div>
+    </a>
+
+    <div id="detail-map">
+
+    </div>
+  </div>
+
+  <div id="detail-title">
+    <div>
+      <h3>{{ detailObj.name }}</h3>
+    </div>
+    <a href="#/location/map/{{ detailObj.id }}">
+      <img src="../../assets/imgs/location-icon.png" alt="location-icon.png">
+    </a>
+
+  </div>
+
+  <div id="detail-manipulate">
+    <div>
+      <div class="detail-manipulate-img">
+        <img src="../../assets/imgs/phone.png" alt="phone.png">
+      </div>
+      <p>Telephone</p>
+    </div>
+    <div >
+      <div class="detail-manipulate-img">
+        <img src="../../assets/imgs/email.png" alt="email.png">
+      </div>
+      <p>Email</p>
+    </div>
+    <div>
+      <div class="detail-manipulate-img" ng-click="chooseFavour()">
+        <img src="../../assets/imgs/{{ favourImg }}" alt="{{ favourImg }}">
+      </div>
+      <p>Favourite</p>
+    </div>
+  </div>
+
+  <div class="clearfix"></div>
+
+  <div class="detail-contact">
+    <div class="detail-icon">
+      <img src="../../assets/imgs/location-detail.png" alt="location-detail.png">
+    </div>
+    <div class="detail-address-info">
+      <p>{{ detailObj.address }} <br><b>{{ detailObj.distance }} from current position.</b></p>
+
+    </div>
+  </div>
+  <form novalidate name="editForm">
+    <div class="detail-contact">
+      <div class="detail-icon">
+        <img src="../../assets/imgs/phone.png" alt="phone.png">
+      </div>
+      <div class="detail-format">
+        <div class="detail-info" ng-hide="isPhoneEnabled">
+          <p>{{ detailObj.phone }}</p>
+        </div>
+        <div class="detail-info" ng-show="isPhoneEnabled">
+          <input id="phone" name="txtPhone" type="text" ng-model="phone" class="input-edit" required>
+          <span class="error" ng-show="editForm.txtPhone.$touched || editForm.txtPhone.$dirty && editForm.txtPhone.$invalid">
+          <span ng-show="editForm.txtPhone.$error.required">Phone is required!</span>
+      </span>
+        </div>
+        <div class="detail-edit" ng-click="editPhone()">
+          <img src="../../assets/imgs/edit-detail-icon.png" alt="edit-detail-icon.png">
+        </div>
+      </div>
+    </div>
+
+    <div class="detail-contact">
+
+    </div>
+
+    <div class="detail-button-area">
+      <button id="btnUpdate" ng-disabled="editForm.txtPhone.$invalid" ng-click="save()" >UPDATE & BACK</button>
+    </div>
+  </form>
+</div>

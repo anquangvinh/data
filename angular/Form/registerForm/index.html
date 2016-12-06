@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <style>
+    #wrapper {
+      width: 500px;
+      margin: auto;
+    }
+
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body ng-app="FormApp" ng-controller="FormAppCtrl">
+  <div id="wrapper">
+    <form novalidate name="registerForm">
+      <div class="block-label">User Name: </div>
+      <input name="txtName" type="text" ng-model="user.name" required>
+      <span class="error" ng-show="registerForm.$submitted|| registerForm.txtName.$touched || registerForm.txtName.$dirty && registerForm.txtName.$invalid">
+        <span ng-show="registerForm.txtName.$error.required">User name is required!</span>
+      </span>
+      <br><br>
+
+      <div class="block-label">Email: </div>
+      <input name="txtEmail" type="email" ng-model="user.email" required>
+      <span class="error" ng-show="registerForm.$submitted|| registerForm.txtEmail.$touched || registerForm.txtEmail.$dirty && registerForm.txtEmail.$invalid">
+        <span ng-show="registerForm.txtEmail.$error.required">Email is required!</span>
+        <span ng-show="registerForm.txtEmail.$error.email">Email is wrong!</span>
+      </span>
+      <br><br>
+
+      <div class="block-label">Password:</div>
+      <input name="txtPass" type="password" ng-model="user.password" required>
+      <span class="error" ng-show="registerForm.$submitted|| registerForm.txtPass.$touched || registerForm.txtPass.$dirty && registerForm.txtPass.$invalid">
+        <span ng-show="registerForm.txtPass.$error.required">Password is required!</span>
+      </span>
+      <br><br>
+
+      <div class="block-label">Gender: </div>
+      <label>
+        <input name="rdoGender" type="radio" ng-model="user.gender" value="male" >Male
+      </label>
+      <label>
+        <input name="rdoGender" type="radio" ng-model="user.gender" value="female">Female
+      </label>
+
+      <br><br>
+      Choose Favorite:
+      <label ng-repeat="uf in favorite" >
+        <input type="checkbox" value="{{ uf }}" ng-click="changeFavorChecked(uf)">{{ uf }}
+      </label>
+
+      <br><br>
+
+      Country:
+      <select name="sltCountry" ng-options="x.name for x in country track by x.id" ng-model="user.sltCountry" ng-change="changeSltCountry(user.sltCountry)">
+        <option value="">Choose your Country...</option>
+      </select>
+      <span class="error" ng-show="validateCountry || (registerForm.sltCountry.$touched && registerForm.sltCountry.$pristine)">
+        Choose your Country...
+      </span>
+      <br><br>
+
+      <div class="block-label">Address</div>
+      <textarea name="txtAddress" ng-model="user.address" cols="30" rows="4" required></textarea>
+      <span class="error" ng-show="(registerForm.txtAddress.$touched && registerForm.txtAddress.$invalid)">
+        Enter Your Address!
+      </span>
+
+      <br><br>
+
+      <button ng-click="finalSubmit()">Submit</button>
+    </form>
+  </div>
+
+  <hr>
+  <h2>Result:</h2>
+  <pre>
+    {{ user | json }}
+  </pre>
+
+  <script src="index.js"></script>
+</body>
+</html>

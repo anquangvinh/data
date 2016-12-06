@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+</head>
+<body ng-app="routeApp" ng-controller="routeAppController">
+  <a href="#book/first">First Book</a> |
+  <a href="#book/first/ch/1">First Book : Chapter 1</a> |
+
+  <a href="#book/second">Second Book</a> |
+  <a href="#book/second/ch/2">Second Book : Chapter 2</a>
+
+  <hr>
+
+  <div ng-view></div>
+
+  <hr>
+  <pre>$location.absUrl: {{$location.absUrl()}}</pre>
+  <pre>$location.path: {{ $location.path() }}</pre>
+  <pre>$route.current.templateUrl: {{ $route.current.templateUrl }}</pre>
+  <pre>$route.current.params: {{ $route.current.params }}</pre>
+  <pre>$route.current.scope.ctrlName: {{ $route.current.scope.ctrlName }}</pre>
+  <pre>$routeParams: {{ $routeParams }}</pre>
+
+
+  <script src="index.js"></script>
+  <script src="routeAppController.js"></script>
+  <script src="appRouting.js"></script>
+  <script src="page/book/bookController.js"></script>
+  <script src="page/chapter/chapterController.js"></script>
+</body>
+</html>

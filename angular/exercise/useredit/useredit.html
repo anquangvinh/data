@@ -1,0 +1,39 @@
+<h1>Edit</h1>
+<div>
+  <form name="userEdit" novalidate>
+    <label>User Name</label>
+
+    <br>
+
+    <input type="text" ng-model="username" name="txtUserName" required>
+    <span ng-show="userEdit.$submitted || userEdit.txtUserName.$touched || userEdit.txtUserName.$dirty && userEdit.txtUserName.$invalid ">
+      <span class="err" ng-show="userEdit.txtUserName.$error.required">
+        User name is required!
+      </span>
+    </span>
+
+    <br>
+
+    <label>Email</label>
+
+    <br>
+
+    <input type="email" ng-model="email" name="txtEmail" required>
+
+    <span ng-show="userEdit.$submitted || userEdit.txtEmail.$touched || userEdit.txtEmail.$dirty && userEdit.txtEmail.$invalid ">
+      <span class="err" ng-show=" userEdit.txtEmail.$error.required">
+      Email is required!
+      </span>
+      <span class="err" ng-show="userEdit.txtEmail.$error.email">
+      Email is invalid!
+      </span>
+    </span>
+
+    <br><br>
+
+    <input type="submit" ng-click="save()" value="Save">
+
+    <a href="#/userlist">Back</a>
+  </form>
+
+</div>

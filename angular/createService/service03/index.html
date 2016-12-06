@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body ng-app="service03App" ng-controller="service03AppCtrl">
+
+  <table border="1px">
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+
+    <tr ng-repeat="user in users">
+      <td>{{ user.name }}</td>
+      <td>{{ user.email }}</td>
+      <td><button type="button" ng-click="userDetail($index)">Edit</button></td>
+      <td><button type="button" ng-click="deleteUser($index)">Delete</button></td>
+    </tr>
+  </table>
+
+  <hr>
+  UserName: <br>
+  <input type="text" ng-model="newUser.name">
+
+  <br><br>
+
+  Email: <br>
+  <input type="text" ng-model="newUser.email">
+
+  <br><br>
+  <button ng-click="clickSubmit()">Submit</button>
+  <hr>
+  <button ng-click="removeLocalstorage()">Delete LocalStorage</button>
+  <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<h1>List of Users</h1>
+Search: <input type="text" ng-model="search">
+<br>
+<br>
+<table>
+  <tr>
+    <th>Order No</th>
+    <th>User Name</th>
+    <th>Email</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  <tr ng-repeat="user in users | filter : search">
+    <td>{{ $index + 1}}</td>
+    <td>{{ user.name }}</td>
+    <td>{{ user.email }}</td>
+    <td><a href="#/useredit/edit/{{$index}}">Edit</a></td>
+    <td><a ng-click="deleteUser( $index )">Delete</a></td>
+  </tr>
+</table>
+Total : {{ total }}
+<hr>
+<a href="#/add">Add</a>
+<button ng-click="removeLocalstorage()">Delete</button>

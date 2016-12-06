@@ -1,0 +1,37 @@
+<h1>Add New User</h1>
+<div>
+  <form name="userAdd" novalidate>
+    <label>User Name</label>
+
+    <br>
+
+    <input type="text" ng-model="username" name="txtUserName" required>
+    <span ng-show="userAdd.$submitted || userAdd.txtUserName.$touched || userAdd.txtUserName.$dirty && userAdd.txtUserName.$invalid ">
+      <span class="err" ng-show="userAdd.txtUserName.$error.required">
+        User name is required!
+      </span>
+    </span>
+
+    <br>
+
+    <label>Email</label>
+
+    <br>
+
+    <input type="email" ng-model="email" name="txtEmail" required>
+    <span ng-show="userAdd.$submitted || userAdd.txtEmail.$touched || userAdd.txtEmail.$dirty && userAdd.txtEmail.$invalid ">
+      <span class="err" ng-show=" userAdd.txtEmail.$error.required">
+      Email is required!
+      </span>
+      <span class="err" ng-show="userAdd.txtEmail.$error.email">
+      Email is invalid!
+      </span>
+    </span>
+    <br><br>
+
+    <input type="submit" ng-click="save()" value="Save">
+
+    <a href="#/userlist">Back</a>
+  </form>
+
+</div>
